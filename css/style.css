@@ -1,0 +1,218 @@
+body {
+    background-color: black !important;
+    color: white;
+}
+
+.light {
+    background-color: white;
+    color: black;
+}
+
+.light::after, .navbar-brand::after {
+    color: black;
+
+}
+
+.navbar-brand {
+    color: white;
+
+}
+
+
+.navbar-brand:hover {
+    color: red !important;
+}
+
+.navbar-toggler-icon {
+    color: white !important;
+}
+
+.nav-link {
+    color: white !important;
+
+}
+
+.navbar-brand:hover .log {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: red !important;
+}
+
+.bg {
+    background-size: 100vh;
+}
+
+.intro .display-4 {
+    margin-top: 200px;
+    margin-right: 350px;
+    position: relative;
+    right: -100px;
+}
+
+.buttom {
+    background-color: #white;
+    border: none;
+    color: : #black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-right: 150px;
+    border-radius: 20px;
+}
+
+.buttom:hover {
+    background-color: red;
+    color: white;
+}
+
+
+.icon img {
+    width: 25px;
+    position: relative;
+    right: -120px;
+}
+
+.icon .discord {
+    margin-top: -50px;
+    margin-left: 0rem;
+    position: relative;
+    left: 57rem;
+}
+
+.icon .Github {
+    margin-top: -50px;
+    margin-left: 0px;
+    position: relative;
+    left: 32rem;
+}
+
+.icon .facebook {
+    margin-top: -50px;
+    margin-left: 0px;
+    position: relative;
+    left: 6.8rem;
+}
+
+.icon .linkdin {
+    position: relative;
+    left: 9rem;
+    bottom: 3.1rem;
+}
+
+.label input {
+    display: block;
+    color: red;
+}
+
+.carousel-item {
+    width: 800px;
+    height: auto;
+}
+
+.slide {
+    width: 800px;
+    height: auto;
+    position: relative;
+    top: 15px;
+    left: 150px;
+}
+
+/* valorant */
+
+.valorant {
+    position: relative;
+    padding: 0 0 4 0;
+}
+
+
+
+/* Menu Beli */
+
+
+
+
+
+/* tampilan hp */
+@media (max-width: 575.98px) {
+    .intro img {
+        width: 500px;
+        margin: 30px -100px 100px;
+    }
+
+    .intro .display-4 {
+        margin-top: 100px;
+        margin-right: 250px;
+        position: relative;
+        right: -30px;
+    }
+
+    .buttom {
+        position: relative;
+        left: 150px;
+        bottom: 180px;
+    }
+
+    .icon img {
+        width: 30px;
+        position: relative;
+        right: -30px;
+        bottom: 60px;
+    }
+
+    .icon .discord {
+        margin-top: -100px;
+        margin-left: 0px;
+        position: relative;
+        left: 15rem;
+
+    }
+
+    .icon .Github {
+        margin-top: -100px;
+        margin-left: 0px;
+        position: relative;
+        left: 7rem;
+    }
+
+    .icon .facebook {
+        margin-top: -100px;
+        margin-left: 0px;
+        position: relative;
+        left: -1rem;
+        bottom: -3.4rem;
+    }
+
+    .icon .linkdin {
+        position: relative;
+        bottom: 3.1rem;
+        left: -4.2rem;
+    }
+
+    .carousel-item {
+        width: 350px;
+        height: auto;
+    }
+
+    .slide {
+        width: 350px;
+        height: auto;
+        position: relative;
+        top: 15px;
+        left: -8px;
+    }
+
+    .card1 {}
+
+    .card1 .card-img-top {}
+
+    .card {}
+
+
+}
