@@ -34,6 +34,7 @@ session_start();
 
     <a href="logout.php">LOGOUT</a>
 
+    <h4>Test</h4>
 
     <nav class="navbar navbar-expand-lg bg-transparent ">
         <div class="container">
@@ -56,9 +57,11 @@ session_start();
 
     </nav>
 
-    <div class="slide">
+    <!-- <div class="slide"> -->
+    <div class="container">
+
         <div class="container-fluid">
-            <div class="row ">
+            <div class="row justify-content-center">
                 <div class="col-sm-6 ms-4 mt-4 ">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -87,6 +90,7 @@ session_start();
             </div>
         </div>
     </div>
+    <!-- </div> -->
 
     <div class="container">
         <div class="row justify-content-sm-center">

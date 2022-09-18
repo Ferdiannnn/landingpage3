@@ -116,13 +116,13 @@ body {
     height: auto;
 }
 
-.slide {
+/* .slide {
     width: 800px;
     height: auto;
     position: relative;
     top: 15px;
     left: 150px;
-}
+} */
 
 /* valorant */
 
@@ -200,13 +200,13 @@ body {
         height: auto;
     }
 
-    .slide {
+    /* .slide {
         width: 350px;
         height: auto;
         position: relative;
         top: 15px;
         left: -8px;
-    }
+    } */
 
     .card1 {}
 
