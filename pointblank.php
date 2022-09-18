@@ -2,27 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AKUN</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/style.css
-
-    " />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.1.0/build/pure-min.css"
-        integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous" />
-
-
-
-
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css " />
 
 </head>
 
 <body>
-
-
-
     <nav class="navbar navbar-expand-lg bg-transparent ">
         <div class="container">
             <a class="navbar-brand" href="#">FTSTORE</a>
@@ -43,7 +32,6 @@
         </div>
 
     </nav>
-
 
     <div class="slide">
         <div class="container">
@@ -78,48 +66,37 @@
         </div>
     </div>
 
-
-    <?php
-    
-    require 'function.php';
-    
-    
-
-    ?>
-
-
     <div class="container-fluid">
-        <div class="container d-flex justify-content-center">
-            <div class="row ">
+        <div class="container">
+            <div class="row">
 
-                <div class="col-sm-3">
-                    <Br>
-                    <div class="card mt-5 ">
-                        <a href="valorant.php"><img src="./foto_menu/valorant.png" class=" img-thumbnail" alt="..."
-                                style="width: 150px;" /></a>
+
+                <?php include 'function.php' ?>
+                <?php $ambil=$conn->query("SELECT * FROM pointblank")   ?>
+                <?php while ($ambildata=$ambil->fetch_assoc()) {?>
+                <div class="col-sm-2 my-4  ">
+                    <div class="card card-deck bg-dark text-light mt-4 " style="width: 200px;">
+                        <div class="card-body  ">
+                            <img src="foto_produk/<?php echo $ambildata['gambar'] ?>" class="card-img-top" />
+                            <h5 class="card-title mt-3"><?php echo $ambildata['judul'] ?></h5>
+                            <h5 class="card-title">Rp.<?php echo number_format ($ambildata['harga']) ?></h5>
+                            <p class="card-title"><?php echo $ambildata['katagory'] ?></p>
+                            </p>
+
+                            <a href="detail-valorant.php?id=<?php echo $ambildata['id'] ?>"
+                                class="btn btn-primary ">Detail</a>
+
+                            <a href=<?php echo $ambildata["kontak"] ?> class="btn btn-danger">Beli</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <Br>
-                    <div class="card mt-5 ">
-                        <a href="pointblank.php"><img src="./foto_menu/pb.jpg" class=" img-thumbnail" alt="..."
-                                style="width: 150px;" /></a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <Br>
-                    <div class="card mt-5 ">
-                        <a href="roblox.php"><img src="./foto_menu/roblox.jpg" class=" img-thumbnail" alt="..."
-                                style="width: 150px;" /></a>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <Br>
-                    <div class="card mt-5 ">
-                        <a href="akun.php"><img src="./foto_menu/valorant.png" class=" img-thumbnail" alt="..."
-                                style="width: 150px;" /></a>
-                    </div>
-                </div>
+
+                <?php } ?>
+
+
+
+
+
 
             </div>
         </div>
@@ -129,7 +106,7 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
     </script>
 </body>

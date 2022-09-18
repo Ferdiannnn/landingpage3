@@ -116,13 +116,7 @@ body {
     height: auto;
 }
 
-/* .slide {
-    width: 800px;
-    height: auto;
-    position: relative;
-    top: 15px;
-    left: 150px;
-} */
+.slide {}
 
 /* valorant */
 
@@ -133,7 +127,7 @@ body {
 
 
 
-/* Menu Beli */
+/* LOADING */
 
 
 
@@ -200,13 +194,19 @@ body {
         height: auto;
     }
 
-    /* .slide {
+    .slide {
         width: 350px;
         height: auto;
         position: relative;
         top: 15px;
-        left: -8px;
-    } */
+        left: -15px;
+    }
+
+    .carousel-control-prev {
+        position: relative;
+        left: 40px;
+        top: -95px;
+    }
 
     .card1 {}
 

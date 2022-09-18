@@ -85,6 +85,52 @@ function tambah_valorant($data){
 
 }
 
+function tambah_pointblank ($data) {
+	global $conn;
+
+	$judul = htmlspecialchars($data['judul']);
+	$deskripsi = htmlspecialchars($data['deskripsi']);
+	$harga = htmlspecialchars($data['harga']);
+	
+	$kontak = htmlspecialchars($data['kontak']);
+	$username = htmlspecialchars($data['username']);
+	$katagory = htmlspecialchars($data['katagory']);
+
+	$gambar = upload();
+		if (!$gambar) {
+			return false;
+		}
+
+	$query = "INSERT INTO pointblank VALUES('', '$gambar', '$judul', '$deskripsi', '$harga', '$kontak','$username', '$katagory')";
+	mysqli_query($conn, $query);
+
+	return mysqli_affected_rows($conn);	
+}
+
+function tambah_roblox ($data) {
+	global $conn;
+
+	$judul = htmlspecialchars($data['judul']);
+	$deskripsi = htmlspecialchars($data['deskripsi']);
+	$harga = htmlspecialchars($data['harga']);
+	
+	$kontak = htmlspecialchars($data['kontak']);
+	$username = htmlspecialchars($data['username']);
+	$katagory = htmlspecialchars($data['katagory']);
+
+	$gambar = upload();
+		if (!$gambar) {
+			return false;
+		}
+
+	$query = "INSERT INTO roblox VALUES('', '$gambar', '$judul', '$deskripsi', '$harga', '$kontak','$username', '$katagory')";
+	mysqli_query($conn, $query);
+
+	return mysqli_affected_rows($conn);	
+}
+
+
+
 function upload(){
 
 	$namaFile = $_FILES['gambar']['name'];

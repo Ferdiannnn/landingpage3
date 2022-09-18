@@ -212,7 +212,7 @@ if(!isset($_SESSION['login'])){
                                     </tfoot>
                                     <tbody>
                                         <?php require '../function.php' ?>
-                                        <?php $ambil=$conn->query("SELECT * FROM valorant") ?>
+                                        <?php $ambil=$conn->query("SELECT * FROM pointblank") ?>
                                         <?php while($perproduk=$ambil->fetch_assoc()){ ?>
                                         <tr>
                                             <td><?php echo $perproduk['username'] ?></td>

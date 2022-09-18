@@ -25,7 +25,7 @@
                     <a class="nav-link" href="akun.php">AKUN</a>
                     <a class="nav-link" href="#">TOPUP</a>
                     <a class="nav-link me-4">ITEM </a>
-                    <a class="nav-link bg-danger log " href="logout.php">Logout</a>
+                    <!-- <a class="nav-link bg-danger log " href="logout.php">Logout</a> -->
 
                 </div>
             </div>
@@ -34,11 +34,12 @@
     </nav>
 
     <div class="slide">
-        <div class="container-fluid">
-            <div class="row ">
-                <div class="col-sm-6 ms-4 mt-2 ">
-                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-sm-8 ms-4">
+                    <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+                        <div class="carousel-inner ms-4">
                             <div class="carousel-item active">
                                 <img src="./img/bg1.jpg" class="d-block w-100" alt="...">
                             </div>
