@@ -34,20 +34,20 @@ session_start();
 
     <a href="logout.php">LOGOUT</a>
 
-
     <nav class="navbar navbar-expand-lg bg-transparent ">
         <div class="container">
-            <a class="navbar-brand" href="#">FTSTORE</a>
+            <a class="navbar-brand" href="index.php">FTSTORE</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon bg-light"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" aria-current="page" href="index12.php">HOME</a>
+                    <a class="nav-link active" aria-current="page" href="index.php">HOME</a>
                     <a class="nav-link" href="akun.php">AKUN</a>
-                    <a class="nav-link" href="#">TOPUP</a>
-                    <a class="nav-link me-4">ITEM </a>
+                    <a class="nav-link" href="topup.php">TOPUP</a>
+                    <a class="nav-link " href="item.php">ITEM </a>
+                    <a href="joki.php" class="nav-link me-4">JOKI</a>
                     <a class="nav-link bg-danger log hidden" href="logout.php">Logout</a>
 
                 </div>
@@ -60,7 +60,7 @@ session_start();
         <div class="container">
 
             <div class="row justify-content-center">
-                <div class="col-sm-8 ms-4">
+                <div class="col-lg-8 ms-4">
                     <div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
                         <div class="carousel-inner ms-4">
                             <div class="carousel-item active">
@@ -89,28 +89,31 @@ session_start();
         </div>
     </div>
 
-    <div class="container">
-        <div class="row justify-content-sm-center">
+    <div class="info">
 
-            <div class="col-sm-3">
-                <Br>
-                <div class="card mt-5 card1">
-                    <a href="akun.php"><img src="./img/akun.jpg" class="card-img-top" /></a>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <Br>
-                <div class="card mt-5">
-                    <a href="#"><img src="./img/topup.jpg" class="card-img-top" /></a>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <Br>
-                <div class="card mt-5">
-                    <a href="#"><img src="./img/bg1.jpg" class="card-img-top" /></a>
-                </div>
-            </div>
+        <div class="container">
+            <div class="row justify-content-sm-center info1">
 
+                <div class="col-lg-3 ">
+                    <Br>
+                    <div class="card mt-5 card1">
+                        <a href="akun.php"><img src="./img/akun.jpg" class="card-img-top" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <Br>
+                    <div class="card mt-5">
+                        <a href="topup.php"><img src="./img/topup.jpg" class="card-img-top" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <Br>
+                    <div class="card mt-5">
+                        <a href="item.php"><img src="./img/bg1.jpg" class="card-img-top" /></a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -123,7 +126,7 @@ session_start();
                 <?php include 'function.php' ?>
                 <?php $ambil=$conn->query("SELECT * FROM valorant") ?>
                 <?php while($perproduk=$ambil->fetch_assoc()){ ?>
-                <div class="col-sm-2">
+                <div class=" col-lg-2 ">
                     <div class="card card-deck bg-dark text-light mt-4 ms-2">
                         <div class=" card-body ">
                             <img src=" foto_produk/<?php echo $perproduk['gambar'] ?>" class="card-img-top" />
@@ -147,11 +150,11 @@ session_start();
     <!-- POINTBLANK -->
     <div class="container-fluid">
         <div class="container">
-            <div class="row">
+            <div class="row ">
                 <?php $ambil=$conn->query("SELECT * FROM pointblank")   ?>
                 <?php while ($ambildata=$ambil->fetch_assoc()) {?>
-                <div class="col-sm-2 ">
-                    <div class="card card-deck bg-dark text-light mt-4 ">
+                <div class="col-lg-2">
+                    <div class="card card-deck bg-dark text-light mt-4 ms-2">
                         <div class="card-body  ">
                             <img src="foto_produk/<?php echo $ambildata['gambar'] ?>" class="card-img-top" />
                             <h5 class="card-title mt-3"><?php echo $ambildata['judul'] ?></h5>
@@ -174,8 +177,8 @@ session_start();
             <div class="row">
                 <?php $ambil=$conn->query("SELECT * FROM roblox")   ?>
                 <?php while ($ambildata=$ambil->fetch_assoc()) {?>
-                <div class="col-sm-2 ">
-                    <div class="card card-deck bg-dark text-light mt-4 ">
+                <div class="col-lg-2">
+                    <div class="card card-deck bg-dark text-light mt-4 ms-2">
                         <div class="card-body  ">
                             <img src="foto_produk/<?php echo $ambildata['gambar'] ?>" class="card-img-top" />
                             <h5 class="card-title mt-3"><?php echo $ambildata['judul'] ?></h5>
@@ -201,7 +204,12 @@ session_start();
 
 
 
+    <div class="container text-center">
+        <div class="row">
 
+            <div class="fixed-footer ">
+                <div class="container">Copyright &copy; 2022 homeku.site</div>
+            </div>
 </body>
 
 </html>

@@ -87,10 +87,11 @@ $error = true;
     <title>
         Login
     </title>
-    <link rel="stylesheet" type="text/css" href="css/inlog.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/update1.css">
 </head>
 
 <body class="bodyy">
@@ -110,7 +111,7 @@ $error = true;
                 <form class="box" action="" method="post">
 
                     <ul>
-                        <h1 class="mt-2"> Login</h1>
+                        <h1 class="mt-2 loginh1"> Login</h1>
 
                         <input type="text" name="username" placeholder="username">
 
@@ -127,7 +128,7 @@ $error = true;
                     </ul>
 
                     <ul>
-                        <button class="btn btn-danger" type="button"
+                        <button class="btn btn-danger regis" type="button"
                             onclick="window.location.href='registrasi.php'">Register</button>
                     </ul>
 

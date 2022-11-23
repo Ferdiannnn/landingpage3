@@ -223,7 +223,8 @@ if(!isset($_SESSION['login'])){
                                             <td>Rp. <?php echo number_format($perproduk['harga']) ?></td>
                                             <td><?php echo $perproduk['kontak'] ?></td>
                                             <td>
-                                                <a href="ubah.php?id=<?php echo $perproduk["id"]; ?>">Ubah</a>
+                                                <a
+                                                    href="../ubah_pointblank.php?id=<?php echo $perproduk["id"]; ?>">Ubah</a>
                                                 <a href="hapus_valorant.php?id=<?php echo $perproduk["id"]; ?>"
                                                     onclick="return confirm('yakin ?');">Hapus</a>
 

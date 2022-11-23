@@ -113,7 +113,6 @@ function tambah_roblox ($data) {
 	$judul = htmlspecialchars($data['judul']);
 	$deskripsi = htmlspecialchars($data['deskripsi']);
 	$harga = htmlspecialchars($data['harga']);
-	
 	$kontak = htmlspecialchars($data['kontak']);
 	$username = htmlspecialchars($data['username']);
 	$katagory = htmlspecialchars($data['katagory']);
@@ -128,9 +127,108 @@ function tambah_roblox ($data) {
 
 	return mysqli_affected_rows($conn);	
 }
+function ubah_valorant ($data) {	
+	global $conn;
+
+	$id = $data["id"];
+	$gambarlama = htmlspecialchars($data["gambarlama"]);
+	$judul = htmlspecialchars($data['judul']);
+	$deskripsi = htmlspecialchars($data['deskripsi']);
+	$harga = htmlspecialchars($data['harga']);
+	$kontak = htmlspecialchars($data['kontak']);
+	$username = htmlspecialchars($data['username']);
+	$katagory = htmlspecialchars($data['katagory']);
+
+	if($_FILES['gambar']['error'] === 4){
+		$gambar = $gambarlama;
+	}else{
+		$gambar = upload();
+	}
+	
 
 
+	$query = "UPDATE valorant SET
+				gambar = '$gambar',
+				judul = '$judul',
+				deskripsi = '$deskripsi',
+				harga = '$harga',
+				kontak = '$kontak',
+				username = '$username',
+				katagory = '$katagory'
+				WHERE id = $id
+				";
+	mysqli_query($conn, $query);
+	return mysqli_affected_rows($conn);
 
+}
+function ubah_pointblank ($data) {	
+	global $conn;
+
+	$id = $data["id"];
+	$gambarlama = htmlspecialchars($data["gambarlama"]);
+	$judul = htmlspecialchars($data['judul']);
+	$deskripsi = htmlspecialchars($data['deskripsi']);
+	$harga = htmlspecialchars($data['harga']);
+	$kontak = htmlspecialchars($data['kontak']);
+	$username = htmlspecialchars($data['username']);
+	$katagory = htmlspecialchars($data['katagory']);
+
+	if($_FILES['gambar']['error'] === 4){
+		$gambar = $gambarlama;
+	}else{
+		$gambar = upload();
+	}
+	
+
+
+	$query = "UPDATE pointblank SET
+				gambar = '$gambar',
+				judul = '$judul',
+				deskripsi = '$deskripsi',
+				harga = '$harga',
+				kontak = '$kontak',
+				username = '$username',
+				katagory = '$katagory'
+				WHERE id = $id
+				";
+	mysqli_query($conn, $query);
+	return mysqli_affected_rows($conn);
+
+}
+function ubah_roblox ($data) {	
+	global $conn;
+
+	$id = $data["id"];
+	$gambarlama = htmlspecialchars($data["gambarlama"]);
+	$judul = htmlspecialchars($data['judul']);
+	$deskripsi = htmlspecialchars($data['deskripsi']);
+	$harga = htmlspecialchars($data['harga']);
+	$kontak = htmlspecialchars($data['kontak']);
+	$username = htmlspecialchars($data['username']);
+	$katagory = htmlspecialchars($data['katagory']);
+
+	if($_FILES['gambar']['error'] === 4){
+		$gambar = $gambarlama;
+	}else{
+		$gambar = upload();
+	}
+	
+
+
+	$query = "UPDATE roblox SET
+				gambar = '$gambar',
+				judul = '$judul',
+				deskripsi = '$deskripsi',
+				harga = '$harga',
+				kontak = '$kontak',
+				username = '$username',
+				katagory = '$katagory'
+				WHERE id = $id
+				";
+	mysqli_query($conn, $query);
+	return mysqli_affected_rows($conn);
+
+}
 function upload(){
 
 	$namaFile = $_FILES['gambar']['name'];
@@ -138,8 +236,10 @@ function upload(){
 	$error = $_FILES['gambar']['error'];
 	$tmpName = $_FILES['gambar']['tmp_name'];
 	$ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+	$size   = $_FILES['gambar']['size']; 
 
-
+	$width_size = 100;
+	
 	if ($error === 4) {
 		echo "<script>
 				alert('pilih gambar terlebih dahulu');
@@ -168,5 +268,10 @@ function upload(){
 	move_uploaded_file($tmpName, 'foto_produk/' . $namaFileBaru);
 	return $namaFileBaru;
 }
+
+
+
+
+
 
  ?>

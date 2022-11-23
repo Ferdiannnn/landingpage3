@@ -23,8 +23,9 @@
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link active" aria-current="page" href="index12.php">HOME</a>
                     <a class="nav-link" href="akun.php">AKUN</a>
-                    <a class="nav-link" href="#">TOPUP</a>
-                    <a class="nav-link me-4">ITEM </a>
+                    <a class="nav-link" href="topup.php">TOPUP</a>
+                    <a class="nav-link " href="item.php">ITEM </a>
+                    <a href="joki.php" class="nav-link me-4">JOKI</a>
                     <!-- <a class="nav-link bg-danger log " href="logout.php">Logout</a> -->
 
                 </div>
@@ -67,9 +68,9 @@
     </div>
 
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-4">
         <div class="container ">
-            <div class="row justify-content-md-center">
+            <div class="row justify-content-md-start">
                 <?php include 'function.php' ?>
                 <?php $ambil=$conn->query("SELECT * FROM valorant") ?>
                 <?php while($perproduk=$ambil->fetch_assoc()){ ?>
