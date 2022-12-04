@@ -32,6 +32,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.php">HOME</a>
                     <a class="nav-link" href="akun.php">AKUN</a>
                     <a class="nav-link" href="topup.php">TOPUP</a>
                     <a class="nav-link " href="item.php">ITEM </a>

@@ -7,9 +7,6 @@ session_start();
 //     exit;
 // }
 
-
-
-
 ?>
 
 <!doctype html>
@@ -119,13 +116,16 @@ session_start();
 
 
     <!-- VALORANT -->
+    <!-- <form action="proses.php" method="post"> -->
     <div class="container-fluid" style="">
         <div class="container">
             <div class="row ">
                 <!-- batas -->
                 <?php include 'function.php' ?>
-                <?php $ambil=$conn->query("SELECT * FROM valorant") ?>
+                <?php $ambil=$conn->query("SELECT * FROM toko") ?>
                 <?php while($perproduk=$ambil->fetch_assoc()){ ?>
+                <?php $order_id = $perproduk["order_id"]; ?>
+                <?php $id = $perproduk["id"]; ?>
                 <div class=" col-lg-2 ">
                     <div class="card card-deck bg-dark text-light mt-4 ms-2">
                         <div class=" card-body ">
@@ -134,10 +134,21 @@ session_start();
                             <!-- <p class="card-text"><?php echo $perproduk['deskripsi'] ?></p> -->
                             <h5 class="card-title">Rp.<?php echo number_format ($perproduk['harga']) ?></h5>
 
-                            <p class="card-title "><?php echo $perproduk['katagory'] ?> </p>
-                            <a href="detail-valorant.php?id=<?php echo $perproduk['id'] ?>"
-                                class="btn btn-primary">Detail</a>
-                            <a href=<?php echo $perproduk['kontak'] ?> terget='_blank' class="btn btn-danger">Beli</a>
+                            <p class="card-title "><?php echo $perproduk['game'] ?> </p>
+                            <p>stok <?php echo $perproduk["stok"]?></p>
+
+                            <a href="detail.php?id=<?php echo $perproduk['id'] ?>" class="btn btn-primary">Detail</a>
+                            <?php 
+                                if($perproduk["stok"] == 0){
+                                    echo "<a href='#' class='btn btn-danger'>Habis</a>";
+                                    ;
+
+                                }else{
+                                    echo "<a href='/website/landingpage/midtrans/examples/snap/checkout-process-simple-version.php?order_id=$order_id' class='btn btn-danger'>Beli</a>";
+                                }
+                            ?>
+
+
 
                         </div>
                     </div>
@@ -146,54 +157,9 @@ session_start();
             </div>
         </div>
     </div>
-    <!-- END VALORANT -->
-    <!-- POINTBLANK -->
-    <div class="container-fluid">
-        <div class="container">
-            <div class="row ">
-                <?php $ambil=$conn->query("SELECT * FROM pointblank")   ?>
-                <?php while ($ambildata=$ambil->fetch_assoc()) {?>
-                <div class="col-lg-2">
-                    <div class="card card-deck bg-dark text-light mt-4 ms-2">
-                        <div class="card-body  ">
-                            <img src="foto_produk/<?php echo $ambildata['gambar'] ?>" class="card-img-top" />
-                            <h5 class="card-title mt-3"><?php echo $ambildata['judul'] ?></h5>
-                            <h5 class="card-title">Rp.<?php echo number_format ($ambildata['harga']) ?></h5>
-                            <p class="card-title"><?php echo $ambildata['katagory'] ?></p>
-                            <a href="detail-valorant.php?id=<?php echo $ambildata['id'] ?>"
-                                class="btn btn-primary ">Detail</a>
-                            <a href=<?php echo $ambildata["kontak"] ?> class="btn btn-danger">Beli</a>
-                        </div>
-                    </div>
-                </div>
-                <?php } ?>
-            </div>
-        </div>
     </div>
-    <!-- END POINTBLANK -->
-    <!-- ROBLOX -->
-    <div class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <?php $ambil=$conn->query("SELECT * FROM roblox")   ?>
-                <?php while ($ambildata=$ambil->fetch_assoc()) {?>
-                <div class="col-lg-2">
-                    <div class="card card-deck bg-dark text-light mt-4 ms-2">
-                        <div class="card-body  ">
-                            <img src="foto_produk/<?php echo $ambildata['gambar'] ?>" class="card-img-top" />
-                            <h5 class="card-title mt-3"><?php echo $ambildata['judul'] ?></h5>
-                            <h5 class="card-title">Rp.<?php echo number_format ($ambildata['harga']) ?></h5>
-                            <p class="card-title"><?php echo $ambildata['katagory'] ?></p>
-                            <a href="detail-valorant.php?id=<?php echo $ambildata['id'] ?>"
-                                class="btn btn-primary ">Detail</a>
-                            <a href=<?php echo $ambildata["kontak"] ?> class="btn btn-danger">Beli</a>
-                        </div>
-                    </div>
-                </div>
-                <?php } ?>
-            </div>
-        </div>
-    </div>
+
+    <!-- </form> -->
     <!-- END ROBLOX -->
 
 

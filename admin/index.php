@@ -75,9 +75,8 @@ if(!isset($_SESSION['login'])){
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Fitur Tambah:</h6>
-                        <a class="collapse-item" href="table_valorant.php"> Valorant</a>
-                        <a class="collapse-item" href="table_pointblank.php"> Pointblank</a>
-                        <a class="collapse-item" href="table_roblox.php"> Roblox</a>
+                        <a class="collapse-item" href="table.php"> Akun</a>
+
                     </div>
                 </div>
             </li>
@@ -92,9 +91,8 @@ if(!isset($_SESSION['login'])){
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Fitur Tambah:</h6>
-                        <a class="collapse-item" href="../tambah_valorant.php"> Valorant</a>
-                        <a class="collapse-item" href="../tambah_pointblank.php"> Pointblank</a>
-                        <a class="collapse-item" href="../tambah_roblox.php"> Roblox</a>
+                        <a class="collapse-item" href="../tambah.php"> Akun</a>
+
                     </div>
                 </div>
             </li>

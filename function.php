@@ -1,6 +1,6 @@
 <?php 
 
-$conn = mysqli_connect("localhost", "root", "", "user");
+$conn = mysqli_connect("localhost", "root", "", "tokoonline");
 
 
 function query($query){
@@ -13,10 +13,10 @@ function query($query){
 	return $rows;
 }
 
-function hapus_valorant($id){
+function hapus($id){
 	global $conn;
 
-	mysqli_query($conn, "DELETE FROM valorant WHERE id = $id");
+	mysqli_query($conn, "DELETE FROM toko WHERE id = $id");
 
 	return mysqli_affected_rows($conn);
 }
@@ -27,7 +27,6 @@ function registrasi($data){
 	$username =strtolower( stripslashes( $data["username"]));
 	$password = mysqli_real_escape_string($conn, $data["password"]);
 	$password2 = mysqli_real_escape_string($conn, $data["password2"]);
-	$level =strtolower( stripslashes( $data["level"]));
 
 
 	//cek sudah ada ato belum
@@ -54,30 +53,31 @@ function registrasi($data){
 
 
 	//tambahakan user baru
-	mysqli_query($conn, "INSERT INTO user VALUES('', '$username', '$password', '$level')");
+	mysqli_query($conn, "INSERT INTO user VALUES('', '$username', '$password')");
 
 	return mysqli_affected_rows ($conn);
 }
 
 
-function tambah_valorant($data){
+function tambah($data){
 	global $conn;
 
 	// $foto_produk = htmlspecialchars($data['foto_produk']);
     $judul = htmlspecialchars($data['judul']);
     $deskripsi = htmlspecialchars($data['deskripsi']);
     $harga = htmlspecialchars($data['harga']);
-	
-    $kontak = htmlspecialchars($data['kontak']);
-    $username = htmlspecialchars($data['username']);
-	$katagory = htmlspecialchars($data['katagory']);
+	$order_id = rand();
+	$game = htmlspecialchars($data['game']);
+	$stok = htmlspecialchars($data['stok']);
+	$transaction_status= 1;
+	$transaction_id="";
 
 	$gambar = upload();
 		if (!$gambar) {
 			return false;
 		}
 
-	$query = "INSERT INTO valorant VALUES('', '$gambar', '$judul', '$deskripsi', '$harga', '$kontak','$username', '$katagory')";
+	$query = "INSERT INTO toko VALUES('', '$gambar', '$judul', '$deskripsi', '$harga','$order_id', '$game','$stok','$transaction_status','$transaction_id')";
 	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);
@@ -85,59 +85,19 @@ function tambah_valorant($data){
 
 }
 
-function tambah_pointblank ($data) {
-	global $conn;
 
-	$judul = htmlspecialchars($data['judul']);
-	$deskripsi = htmlspecialchars($data['deskripsi']);
-	$harga = htmlspecialchars($data['harga']);
-	
-	$kontak = htmlspecialchars($data['kontak']);
-	$username = htmlspecialchars($data['username']);
-	$katagory = htmlspecialchars($data['katagory']);
-
-	$gambar = upload();
-		if (!$gambar) {
-			return false;
-		}
-
-	$query = "INSERT INTO pointblank VALUES('', '$gambar', '$judul', '$deskripsi', '$harga', '$kontak','$username', '$katagory')";
-	mysqli_query($conn, $query);
-
-	return mysqli_affected_rows($conn);	
-}
-
-function tambah_roblox ($data) {
-	global $conn;
-
-	$judul = htmlspecialchars($data['judul']);
-	$deskripsi = htmlspecialchars($data['deskripsi']);
-	$harga = htmlspecialchars($data['harga']);
-	$kontak = htmlspecialchars($data['kontak']);
-	$username = htmlspecialchars($data['username']);
-	$katagory = htmlspecialchars($data['katagory']);
-
-	$gambar = upload();
-		if (!$gambar) {
-			return false;
-		}
-
-	$query = "INSERT INTO roblox VALUES('', '$gambar', '$judul', '$deskripsi', '$harga', '$kontak','$username', '$katagory')";
-	mysqli_query($conn, $query);
-
-	return mysqli_affected_rows($conn);	
-}
-function ubah_valorant ($data) {	
+function ubah ($data) {	
 	global $conn;
 
 	$id = $data["id"];
 	$gambarlama = htmlspecialchars($data["gambarlama"]);
 	$judul = htmlspecialchars($data['judul']);
-	$deskripsi = htmlspecialchars($data['deskripsi']);
-	$harga = htmlspecialchars($data['harga']);
-	$kontak = htmlspecialchars($data['kontak']);
-	$username = htmlspecialchars($data['username']);
-	$katagory = htmlspecialchars($data['katagory']);
+    $deskripsi = htmlspecialchars($data['deskripsi']);
+    $harga = htmlspecialchars($data['harga']);
+	$stok = htmlspecialchars($data['stok']);
+	$order_id = rand();
+	$game = htmlspecialchars($data['game']);
+	$transaction_status= 1;
 
 	if($_FILES['gambar']['error'] === 4){
 		$gambar = $gambarlama;
@@ -147,88 +107,22 @@ function ubah_valorant ($data) {
 	
 
 
-	$query = "UPDATE valorant SET
+	$query = "UPDATE toko SET
 				gambar = '$gambar',
 				judul = '$judul',
 				deskripsi = '$deskripsi',
 				harga = '$harga',
-				kontak = '$kontak',
-				username = '$username',
-				katagory = '$katagory'
+				order_id = '$order_id',
+				game = '$game'
+				stok = '$stok'
+				transaksi_status = '$transaction_status'
 				WHERE id = $id
 				";
 	mysqli_query($conn, $query);
 	return mysqli_affected_rows($conn);
 
 }
-function ubah_pointblank ($data) {	
-	global $conn;
 
-	$id = $data["id"];
-	$gambarlama = htmlspecialchars($data["gambarlama"]);
-	$judul = htmlspecialchars($data['judul']);
-	$deskripsi = htmlspecialchars($data['deskripsi']);
-	$harga = htmlspecialchars($data['harga']);
-	$kontak = htmlspecialchars($data['kontak']);
-	$username = htmlspecialchars($data['username']);
-	$katagory = htmlspecialchars($data['katagory']);
-
-	if($_FILES['gambar']['error'] === 4){
-		$gambar = $gambarlama;
-	}else{
-		$gambar = upload();
-	}
-	
-
-
-	$query = "UPDATE pointblank SET
-				gambar = '$gambar',
-				judul = '$judul',
-				deskripsi = '$deskripsi',
-				harga = '$harga',
-				kontak = '$kontak',
-				username = '$username',
-				katagory = '$katagory'
-				WHERE id = $id
-				";
-	mysqli_query($conn, $query);
-	return mysqli_affected_rows($conn);
-
-}
-function ubah_roblox ($data) {	
-	global $conn;
-
-	$id = $data["id"];
-	$gambarlama = htmlspecialchars($data["gambarlama"]);
-	$judul = htmlspecialchars($data['judul']);
-	$deskripsi = htmlspecialchars($data['deskripsi']);
-	$harga = htmlspecialchars($data['harga']);
-	$kontak = htmlspecialchars($data['kontak']);
-	$username = htmlspecialchars($data['username']);
-	$katagory = htmlspecialchars($data['katagory']);
-
-	if($_FILES['gambar']['error'] === 4){
-		$gambar = $gambarlama;
-	}else{
-		$gambar = upload();
-	}
-	
-
-
-	$query = "UPDATE roblox SET
-				gambar = '$gambar',
-				judul = '$judul',
-				deskripsi = '$deskripsi',
-				harga = '$harga',
-				kontak = '$kontak',
-				username = '$username',
-				katagory = '$katagory'
-				WHERE id = $id
-				";
-	mysqli_query($conn, $query);
-	return mysqli_affected_rows($conn);
-
-}
 function upload(){
 
 	$namaFile = $_FILES['gambar']['name'];

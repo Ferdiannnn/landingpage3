@@ -1,0 +1,152 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    background-color: #000000;
+    margin: 20px auto;
+    padding: 10px;
+    width: 700px;
+    height: 400px;
+    position: relative;
+    top: 8rem;
+    left: 8rem;
+}
+
+.box h1 {
+    margin: 10px auto;
+}
+
+
+
+
+.box input[type="text"], .box input[type="password"], .box input[type="number"], .box input[type="button"] {
+    border: 1px solid #FFFFFF;
+
+    background: none;
+    /* display: block; */
+    margin: 10px auto;
+    margin-left: 18px;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    /* outline: none; */
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    position: relative;
+}
+
+.box input[type="submit"] {
+    border: 1px solid #FFFFFF;
+
+    background: none;
+    /* display: block; */
+    margin: 1px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    /* outline: none; */
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    position: relative;
+    left: 8rem;
+}
+
+.box input[type="file"] {
+    border: 1px solid #FFFFFF;
+
+    background: none;
+    /* display: block; */
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 300px;
+    /* outline: none; */
+    color: white;
+    border-radius: 20px;
+    transition: 0.25s;
+    position: relative;
+    left: 5rem;
+}
+
+
+ul {
+    width: 500px;
+    margin: 5 auto;
+    padding: 5px;
+
+}
+
+.modal-body {
+    color: #000000;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 12px;
+    margin: 20px 20px 20px 20px;
+    padding: 0;
+}
+
+
+
+.regis {
+    position: relative;
+    left: 11rem;
+}
+
+.login {
+    position: relative;
+    left: 8rem;
+}
+
+.loginh1 {
+    position: relative;
+    left: 10rem;
+}
+
+
+
+.regish1 {
+    position: relative;
+    left: 7rem;
+}
+
+/* hp */
+
+@media (max-width: 575.98px) {
+    .box {
+        margin: 20px auto;
+        padding: 10px;
+        width: 400px;
+        height: 400px;
+        position: relative;
+        top: 12rem;
+        left: -2rem;
+    }
+
+    .box input[type="text"], .box input[type="password"], .box input[type="number"], .box input[type="button"] {
+        border: 1px solid #FFFFFF;
+
+        background: none;
+        display: block;
+        margin: 10px auto;
+        margin-left: 18px;
+        text-align: center;
+        border: 2px solid #3498db;
+        padding: 14px 10px;
+        width: 400px;
+        /* outline: none; */
+        color: white;
+        border-radius: 20px;
+        transition: 0.25s;
+        position: relative;
+    }
+}
