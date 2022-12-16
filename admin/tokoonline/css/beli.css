@@ -1,0 +1,62 @@
+body {
+    background-color: black !important;
+    color: white;
+}
+
+.navbar-brand {
+    color: white;
+
+}
+
+.navbar-brand:hover {
+    color: red !important;
+}
+
+.navbar-toggler-icon {
+    color: white !important;
+}
+
+.nav-link {
+    color: white !important;
+
+}
+
+.navbar-brand:hover .log {
+    color: white !important;
+}
+
+.nav-link:hover {
+    color: red !important;
+}
+
+.foto {
+    width: 500px;
+}
+
+.beli {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.beli:hover {
+    background-color: rgb(255, 251, 0) !important;
+    color: red;
+}
+
+
+
+/* hp */
+
+@media (max-width: 575.98px) {
+    .foto {
+        margin-top: 10px;
+        width: 350px;
+    }
+
+    .beli {
+        width: 350px;
+        height: 40px;
+        border-radius: 20px;
+    }
+}
