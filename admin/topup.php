@@ -191,7 +191,7 @@ if(!isset($_SESSION['login'])){
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Tipe</th>
+                                            <th>Game</th>
                                             <th>Judul</th>
                                             <th>Deskripsi</th>
                                             <th>Harga</th>
@@ -200,7 +200,7 @@ if(!isset($_SESSION['login'])){
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Tipe</th>
+                                            <th>Game</th>
                                             <th>Judul</th>
                                             <th>Deskripsi</th>
                                             <th>Harga</th>
@@ -210,7 +210,7 @@ if(!isset($_SESSION['login'])){
                                     <tbody>
                                         <?php require '../function.php' ?>
                                         <?php $username = $_SESSION["username"]; ?>
-                                        <?php $ambil=$conn->query("SELECT * FROM toko Where username = '$username'" ) ?>
+                                        <?php $ambil=$conn->query("SELECT * FROM topup Where username = '$username'" ) ?>
                                         <?php while($perproduk=$ambil->fetch_assoc()){ ?>
                                         <tr>
                                             <td><?php echo $perproduk['game'] ?></td>

@@ -102,8 +102,9 @@ function tambahtopup($data){
 			return false;
 		}
 
-	$query = "INSERT INTO toko VALUES('', '$gambar', '$judul', '$deskripsi', '$harga','$order_id', '$transaction_id','$transaction_status','$game','$stok','$username')";
+	$query = "INSERT INTO topup VALUES('', '$gambar', '$judul', '$deskripsi', '$harga','$order_id', '$transaction_id','$transaction_status','$game','$stok','$username')";
 	mysqli_query($conn, $query);
+	return mysqli_affected_rows($conn);
 }
 
 

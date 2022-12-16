@@ -2,12 +2,13 @@
 session_start();
 
 
-include 'function.php';
+require 'function.php';
 if (!isset($_SESSION["login"]) ) {
 	header ("Location: login.php");
 	exit;
 }
-
+$username = $_SESSION["username"];
+$data = query("SELECT * FROM user ORDER BY id  ");
 
 
 if (isset($_POST["submit"])) {
@@ -16,19 +17,19 @@ if (isset($_POST["submit"])) {
         echo "
         <script>
         alert('data berhasil di tambah');
-        document.location.href = 'index.php';
+        document.location.href = 'admin/index.php';
         </script>
         ";
     }else{
         echo "
         <script>
         alert('data gagal di tambah');
-        document.location.href = 'index.php';
+        document.location.href = 'admin/index.php';
         </script>
         ";
     }
 
-$data=query("SELECT * FROM topup WHERE id = $id")[0];
+
 
     
 
@@ -42,7 +43,7 @@ $data=query("SELECT * FROM topup WHERE id = $id")[0];
 <head>
     <!-- <link rel="stylesheet" href="css/inlog.css"> -->
 
-    <title>Tambah Data</title>
+    <title>TOP UP || </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -110,11 +111,11 @@ $data=query("SELECT * FROM topup WHERE id = $id")[0];
                     <input type="file" class="form-control-file " name="gambar" id="gambar" placeholder="Gambar">
                 </div>
 
-                <div class="form-group row">
+                <div class="form-group row" hidden>
                     <label for="inputPassword3" class="col-sm-2 col-form-label">username</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" name="username" id="username" placeholder="username"
-                            value="">
+                        <input type="text" class="form-control" name="username" id="username" placeholder="username"
+                            value="<?= $_SESSION["username"] ?>">
                     </div>
                 </div>
 
